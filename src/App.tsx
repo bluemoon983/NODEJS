@@ -61,7 +61,6 @@ function App() {
   <>
     <GlobalStyle />
     {isLoading ? <LoadingScreen /> : <RouterProvider router={router} />}
-    
   </>
   )
 }
