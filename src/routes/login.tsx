@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Error, Form, Input, Switcher, Title, Wrapper } from "../components/auth-components";
+import GithubButton from "../components/github-button";
 
 
 export default function Login() {
@@ -38,9 +39,10 @@ export default function Login() {
         }
     }
 
-    return <Wrapper>
-        <Title>Log into X</Title>
-        <Form onSubmit={onSubmit}>
+    return (
+        <Wrapper>
+            <Title>Log into X</Title>
+            <Form onSubmit={onSubmit}>
             <Input 
                 onChange={onChange}
                 name="email" 
@@ -63,5 +65,7 @@ export default function Login() {
         <Switcher>
             Don't have an account? <Link to="/create-account">Create one &rarr;</Link>
         </Switcher>
-    </Wrapper>
+            <GithubButton />
+        </Wrapper>
+    );
 }   
