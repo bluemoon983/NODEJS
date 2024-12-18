@@ -37,6 +37,7 @@ export default function CreateAccount() {
                 displayName: name,
             });
             navigate("/");
+            
         }catch(e){
             if(e instanceof FirebaseError){
                 setError(e.message);

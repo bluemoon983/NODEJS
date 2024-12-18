@@ -9,22 +9,19 @@ import reset from 'styled-reset';
 import { useState, useEffect } from 'react';
 import LoadingScreen from './components/loading-screen';
 import { auth } from './firebase';
-import ProtectedRoute from './components/protected-route';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: 
-    <ProtectedRoute>
-      <Layout />
-    </ProtectedRoute>,
+    element: <Layout />,
+    errorElement: <div>페이지를 찾을 수 없습니다.</div>,
     children: [
       {
-        path:"",
-        element: <Home/>,
+        path: "",
+        element: <Home />,
       },
       {
-        path: " profile",
+        path: "profile",
         element: <Profile />,
       }
     ],
